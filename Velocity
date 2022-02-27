@@ -1,0 +1,40 @@
+package prom;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.vel.config.Configurations;
+
+public class LoginPagePOM {
+	
+	//Declaration
+	
+	@FindBy(xpath="//input[@name='email']") private WebElement uid; 
+	@FindBy(xpath="//input[@name='pass']") private WebElement pwd; 
+	@FindBy(xpath="//button[@name='login']") private WebElement btn; 
+	
+	// Initialization
+	
+	LoginPagePOM(WebDriver driver)
+	{
+		PageFactory.initElements(driver, this);
+	}
+	
+     
+	// usages
+	
+     public void userName() {
+	 uid.sendKeys("Shivmala");
+     }
+
+     public void pass() {
+	  pwd.sendKeys("1234567");
+     }
+
+    public void button() {
+	btn.click();
+     }
+
+}
